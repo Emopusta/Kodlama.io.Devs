@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\ProgrammingLanguage\Commands\" />
-    <Folder Include="Features\ProgrammingLanguage\Constants\" />
-    <Folder Include="Features\ProgrammingLanguage\Dtos\" />
-    <Folder Include="Features\ProgrammingLanguage\Models\" />
-    <Folder Include="Features\ProgrammingLanguage\Rules\" />
-    <Folder Include="Features\ProgrammingLanguage\Queries\" />
-    <Folder Include="Features\ProgrammingLanguage\Profiles\" />
+    <Folder Include="Features\ProgrammingLanguages\Constants\" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -23,6 +17,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\corePackages\Core.Application\Core.Application.csproj" />
+	  <ProjectReference Include="..\..\..\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
 	  <ProjectReference Include="..\KodlamaioDevs.Domain\KodlamaioDevs.Domain.csproj" />
 	</ItemGroup>
 
