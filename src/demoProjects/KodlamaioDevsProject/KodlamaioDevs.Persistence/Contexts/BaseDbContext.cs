@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// add-migration name
+// update-database
 namespace KodlamaioDevs.Persistence.Contexts
 {
     public class BaseDbContext : DbContext
@@ -35,6 +36,17 @@ namespace KodlamaioDevs.Persistence.Contexts
                 a.Property(p => p.Id).HasColumnName("Id");
                 a.Property(p => p.Name).HasColumnName("Name");
                 a.Property(p => p.Description).HasColumnName("Description");
+                a.HasMany(p => p.Technologies);
+            });
+
+            modelBuilder.Entity<Technology>(a =>
+            {
+                a.ToTable("Technologies").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.Name).HasColumnName("Name");
+                a.Property(p => p.Description).HasColumnName("Description");
+                a.Property(p => p.ProgrammingLanguageId).HasColumnName("ProgrammingLanguageId");
+                a.HasOne(p => p.ProgrammingLanguage);
             });
 
 
@@ -42,6 +54,8 @@ namespace KodlamaioDevs.Persistence.Contexts
             ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1, "Test 1", "Test 1 Description"), new(2, "Test 2", "Test 2 Description") };
             modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguageEntitySeeds);
 
+            Technology[] technologyEntitySeeds = { new(1, "Django", 6, "Web framework"), new(2, ".Net", 8, ".NEEEEEET") };
+            modelBuilder.Entity<Technology>().HasData(technologyEntitySeeds);
 
         }
     }

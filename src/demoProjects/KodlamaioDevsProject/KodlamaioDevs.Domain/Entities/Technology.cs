@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace KodlamaioDevs.Domain.Entities
 {
-    public class ProgrammingLanguage : Entity
+    public class Technology : Entity
     {
         public string Name { get; set; }
+        public int ProgrammingLanguageId { get; set; }
         public string Description { get; set; }
-        public virtual ICollection<Technology> Technologies { get; set; }
-
-        public ProgrammingLanguage()
+        public virtual ProgrammingLanguage? ProgrammingLanguage { get; set; }
+        public Technology()
         {
-
         }
 
-        public ProgrammingLanguage(int id,string name, string description) : this()
+        public Technology(int id, string name, int programmingLanguageId, string description)
         {
             Id = id;
             Name = name;
+            ProgrammingLanguageId = programmingLanguageId;
             Description = description;
         }
     }
