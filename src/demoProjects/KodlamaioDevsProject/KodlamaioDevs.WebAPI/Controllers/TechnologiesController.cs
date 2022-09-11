@@ -1,5 +1,6 @@
 ﻿using Core.Application.Requests;
 using KodlamaioDevs.Application.Features.Technologies.Commands.CreateTechnology;
+using KodlamaioDevs.Application.Features.Technologies.Commands.UpdateTechnology;
 using KodlamaioDevs.Application.Features.Technologies.Dtos;
 using KodlamaioDevs.Application.Features.Technologies.Models;
 using KodlamaioDevs.Application.Features.Technologies.Queries.GetListTechnology;
@@ -27,6 +28,12 @@ namespace KodlamaioDevs.WebAPI.Controllers
             TechnologyListModel result = await Mediator.Send(getListTechnologyQuery);
             return Ok(result);
         }
-        
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateTechnologyCommand updateTechnologyCommand)
+        {
+            UpdatedTechnologyDto result = await Mediator.Send(updateTechnologyCommand);
+            return Ok(result);
+        }
     }
 }

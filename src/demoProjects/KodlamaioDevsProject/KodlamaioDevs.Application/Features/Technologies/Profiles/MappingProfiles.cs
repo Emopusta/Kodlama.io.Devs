@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Persistence.Paging;
 using KodlamaioDevs.Application.Features.Technologies.Commands.CreateTechnology;
+using KodlamaioDevs.Application.Features.Technologies.Commands.UpdateTechnology;
 using KodlamaioDevs.Application.Features.Technologies.Dtos;
 using KodlamaioDevs.Application.Features.Technologies.Models;
 using KodlamaioDevs.Application.Features.Technologies.Queries.GetListTechnology;
@@ -23,6 +24,10 @@ namespace KodlamaioDevs.Application.Features.Technologies.Profiles
 
             CreateMap<Technology, TechnologyListDto>().ForMember(t => t.ProgrammingLanguageName, opt => opt.MapFrom(t => t.ProgrammingLanguage.Name)).ReverseMap();
             CreateMap<IPaginate<Technology>, TechnologyListModel>().ReverseMap();
+
+            CreateMap<Technology, UpdatedTechnologyDto>().ReverseMap();
+            CreateMap<Technology, UpdateTechnologyCommand>().ReverseMap();
+            
         }
     }
 }
