@@ -17,7 +17,7 @@ namespace KodlamaioDevs.Domain.Entities
         {
         }
 
-        public Technology(int id, string name, int programmingLanguageId, string description)
+        public Technology(int id, string name, int programmingLanguageId, string description):this()
         {
             Id = id;
             Name = name;

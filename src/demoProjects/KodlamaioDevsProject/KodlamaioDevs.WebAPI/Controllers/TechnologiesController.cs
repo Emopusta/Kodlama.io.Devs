@@ -1,5 +1,8 @@
-﻿using KodlamaioDevs.Application.Features.Technologies.Commands.CreateTechnology;
+﻿using Core.Application.Requests;
+using KodlamaioDevs.Application.Features.Technologies.Commands.CreateTechnology;
 using KodlamaioDevs.Application.Features.Technologies.Dtos;
+using KodlamaioDevs.Application.Features.Technologies.Models;
+using KodlamaioDevs.Application.Features.Technologies.Queries.GetListTechnology;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,5 +20,13 @@ namespace KodlamaioDevs.WebAPI.Controllers
             return Created("",result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
+        {
+            GetListTechnologyQuery getListTechnologyQuery = new() { PageRequest = pageRequest };
+            TechnologyListModel result = await Mediator.Send(getListTechnologyQuery);
+            return Ok(result);
+        }
+        
     }
 }
