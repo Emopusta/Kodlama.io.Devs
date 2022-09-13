@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KodlamaioDevs.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20220910103101_Add-Technology")]
-    partial class AddTechnology
+    [Migration("20220913075014_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,14 +50,14 @@ namespace KodlamaioDevs.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Test 1 Description",
-                            Name = "Test 1"
+                            Description = "Pythooon",
+                            Name = "Python"
                         },
                         new
                         {
                             Id = 2,
                             Description = "Test 2 Description",
-                            Name = "Test 2"
+                            Name = "C#"
                         });
                 });
 
@@ -65,46 +65,26 @@ namespace KodlamaioDevs.Persistence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Description");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProgrammingLanguageId")
-                        .HasColumnType("int")
-                        .HasColumnName("ProgrammingLanguageId");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProgrammingLanguageId");
 
-                    b.ToTable("Technologies", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Web framework",
-                            Name = "Django",
-                            ProgrammingLanguageId = 6
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = ".NEEEEEET",
-                            Name = ".Net",
-                            ProgrammingLanguageId = 8
-                        });
+                    b.ToTable("Technology");
                 });
 
             modelBuilder.Entity("KodlamaioDevs.Domain.Entities.Technology", b =>

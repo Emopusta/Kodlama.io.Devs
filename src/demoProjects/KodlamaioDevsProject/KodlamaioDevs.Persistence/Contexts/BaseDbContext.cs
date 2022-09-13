@@ -1,4 +1,5 @@
-﻿using KodlamaioDevs.Domain.Entities;
+﻿using Core.Security.Entities;
+using KodlamaioDevs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -14,6 +15,10 @@ namespace KodlamaioDevs.Persistence.Contexts
     {
         protected IConfiguration Configuration { get; set; }
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
+        public DbSet<Technology> Technologies { get; set; }
+        public DbSet<User> Users { get; set; }
+
+
 
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
@@ -49,14 +54,30 @@ namespace KodlamaioDevs.Persistence.Contexts
                 a.HasOne(p => p.ProgrammingLanguage);
             });
 
+            modelBuilder.Entity<User>(a =>
+            {
+                a.ToTable("Users").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.FirstName).HasColumnName("FirstName");
+                a.Property(p => p.LastName).HasColumnName("LastName");
+                a.Property(p => p.Email).HasColumnName("Email");
+                a.Property(p => p.PasswordSalt).HasColumnName("PasswordSalt");
+                a.Property(p => p.PasswordHash).HasColumnName("PasswordHash");
+                a.Property(p => p.Status).HasColumnName("Status");
+                a.Property(p => p.AuthenticatorType).HasColumnName("AuthenticatorType");
+
+            });
 
 
-            ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1, "Test 1", "Test 1 Description"), new(2, "Test 2", "Test 2 Description") };
+            ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1
+                ,"Python", "Pythooon"), new(2, "C#", "Test 2 Description") };
             modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguageEntitySeeds);
 
-            Technology[] technologyEntitySeeds = { new(1, "Django", 6, "Web framework"), new(2, ".Net", 8, ".NEEEEEET") };
+            Technology[] technologyEntitySeeds = { new(1, "Django", 1, "Web framework"), new(2, ".Net", 2, ".NEEEEEET") };
             modelBuilder.Entity<Technology>().HasData(technologyEntitySeeds);
 
+            User[] userEntitySeeds = { new(1, "Emre", "Duman", "Emopusta@hotmail.com", Encoding.ASCII.GetBytes("asdasd"), Encoding.ASCII.GetBytes("asdasd"), false, 0) };
+            modelBuilder.Entity<User>().HasData(userEntitySeeds);
         }
     }
 }
