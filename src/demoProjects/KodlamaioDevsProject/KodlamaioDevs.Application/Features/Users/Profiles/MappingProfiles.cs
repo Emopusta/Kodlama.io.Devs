@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Security.Entities;
-using KodlamaioDevs.Application.Features.Users.Commands.CreateUserCommand;
+using Core.Security.JWT;
+using KodlamaioDevs.Application.Features.Users.Commands.RegisterUser;
 using KodlamaioDevs.Application.Features.Users.Dtos;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,13 @@ namespace KodlamaioDevs.Application.Features.Users.Profiles
     {
         public MappingProfiles()
         {
-            CreateMap<User, CreateUserCommand>().ReverseMap();
-            CreateMap<User, CreatedUserDto>().ReverseMap();
+            CreateMap<User, RegisterUserCommand>().ReverseMap();
+            CreateMap<User, RegisteredUserDto>().ReverseMap();
+
+            CreateMap<User, LoggedUserDto>().ReverseMap();
+            CreateMap<User, UserLoginDto>().ReverseMap();
+            CreateMap<AccessToken, UserLoginDto>().ReverseMap();
+
         }
     }
 }

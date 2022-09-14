@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\OperationClaims\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
     <Folder Include="Features\Technologies\Constants\" />
     <Folder Include="Features\Technologies\Queries\GetByIdTechnology\" />
     <Folder Include="Features\Users\Constants\" />
     <Folder Include="Features\Users\Models\" />
-    <Folder Include="Features\Users\Rules\" />
     <Folder Include="Features\Users\Queries\" />
   </ItemGroup>
 

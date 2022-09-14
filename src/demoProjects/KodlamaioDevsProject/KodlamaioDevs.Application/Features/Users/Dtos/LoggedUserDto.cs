@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KodlamaioDevs.Application.Features.Users.Dtos
 {
-    public class CreatedUserDto : UserForRegisterDto
+    public class LoggedUserDto : UserForLoginDto
     {
         
 

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1362EA01
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackages", "{01B7F227-CE8F-41FD-9AF8-6AF5E5259161}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demoProjects", "demoProjects", "{84E05683-0E4A-4FB1-8FD4-9F0C509BC74C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projects", "projects", "{84E05683-0E4A-4FB1-8FD4-9F0C509BC74C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{CD9A8AA1-5CAB-4218-91C5-2550BB86354A}"
 EndProject
@@ -23,29 +23,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "src\cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "src\corePackages\Core.Security\Core.Security.csproj", "{00AA7CFA-B348-4303-B3D0-40750DA10B94}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templateProject", "templateProject", "{11C509DD-21AC-415F-B2F2-EB58985F2703}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\demoProjects\templateProject\Application\Application.csproj", "{78EA22FC-B933-4349-A097-556A076009F1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\demoProjects\templateProject\Domain\Domain.csproj", "{D0D4D281-24C1-4EE0-88D6-01FA18B90442}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\demoProjects\templateProject\Infrastructure\Infrastructure.csproj", "{1A88B2CE-A954-4709-B15E-F6F1210AD2FD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\demoProjects\templateProject\Persistence\Persistence.csproj", "{53D6E924-1C32-4039-8192-CE1BEA129C61}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\demoProjects\templateProject\WebAPI\WebAPI.csproj", "{54568B1F-31E7-4BA3-A2ED-826E85050603}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KodlamaioDevsProject", "KodlamaioDevsProject", "{BFE77559-B274-45DB-A4A2-A9D2E0EF70F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlamaioDevs.Application", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Application\KodlamaioDevs.Application.csproj", "{0517F323-E3B1-441E-821D-64C5BDE0B1FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KodlamaioDevs.Application", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Application\KodlamaioDevs.Application.csproj", "{0517F323-E3B1-441E-821D-64C5BDE0B1FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlamaioDevs.Infrastructure", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Infrastructure\KodlamaioDevs.Infrastructure.csproj", "{86BB97BD-DE2C-4A87-9712-2CAFA94F2B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KodlamaioDevs.Infrastructure", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Infrastructure\KodlamaioDevs.Infrastructure.csproj", "{86BB97BD-DE2C-4A87-9712-2CAFA94F2B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlamaioDevs.Domain", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Domain\KodlamaioDevs.Domain.csproj", "{C80346D3-58FB-4732-B6EF-614DD437CA9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KodlamaioDevs.Domain", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Domain\KodlamaioDevs.Domain.csproj", "{C80346D3-58FB-4732-B6EF-614DD437CA9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlamaioDevs.Persistence", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Persistence\KodlamaioDevs.Persistence.csproj", "{6049037A-4BED-460F-AD68-ECD3ED1BFF3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KodlamaioDevs.Persistence", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.Persistence\KodlamaioDevs.Persistence.csproj", "{6049037A-4BED-460F-AD68-ECD3ED1BFF3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodlamaioDevs.WebAPI", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.WebAPI\KodlamaioDevs.WebAPI.csproj", "{4F461718-25EE-4275-813F-C3FE40284BB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KodlamaioDevs.WebAPI", "src\demoProjects\KodlamaioDevsProject\KodlamaioDevs.WebAPI\KodlamaioDevs.WebAPI.csproj", "{4F461718-25EE-4275-813F-C3FE40284BB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,26 +65,6 @@ Global
 		{00AA7CFA-B348-4303-B3D0-40750DA10B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00AA7CFA-B348-4303-B3D0-40750DA10B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00AA7CFA-B348-4303-B3D0-40750DA10B94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78EA22FC-B933-4349-A097-556A076009F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78EA22FC-B933-4349-A097-556A076009F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78EA22FC-B933-4349-A097-556A076009F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78EA22FC-B933-4349-A097-556A076009F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0D4D281-24C1-4EE0-88D6-01FA18B90442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0D4D281-24C1-4EE0-88D6-01FA18B90442}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0D4D281-24C1-4EE0-88D6-01FA18B90442}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0D4D281-24C1-4EE0-88D6-01FA18B90442}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A88B2CE-A954-4709-B15E-F6F1210AD2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A88B2CE-A954-4709-B15E-F6F1210AD2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A88B2CE-A954-4709-B15E-F6F1210AD2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A88B2CE-A954-4709-B15E-F6F1210AD2FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53D6E924-1C32-4039-8192-CE1BEA129C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53D6E924-1C32-4039-8192-CE1BEA129C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53D6E924-1C32-4039-8192-CE1BEA129C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53D6E924-1C32-4039-8192-CE1BEA129C61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54568B1F-31E7-4BA3-A2ED-826E85050603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54568B1F-31E7-4BA3-A2ED-826E85050603}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54568B1F-31E7-4BA3-A2ED-826E85050603}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54568B1F-31E7-4BA3-A2ED-826E85050603}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0517F323-E3B1-441E-821D-64C5BDE0B1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0517F323-E3B1-441E-821D-64C5BDE0B1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0517F323-E3B1-441E-821D-64C5BDE0B1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -130,12 +98,6 @@ Global
 		{4EA615C5-8C04-4EA1-91DA-C86DA54D2E63} = {01B7F227-CE8F-41FD-9AF8-6AF5E5259161}
 		{54635492-7F95-449B-8C5B-493566F68D4A} = {01B7F227-CE8F-41FD-9AF8-6AF5E5259161}
 		{00AA7CFA-B348-4303-B3D0-40750DA10B94} = {01B7F227-CE8F-41FD-9AF8-6AF5E5259161}
-		{11C509DD-21AC-415F-B2F2-EB58985F2703} = {84E05683-0E4A-4FB1-8FD4-9F0C509BC74C}
-		{78EA22FC-B933-4349-A097-556A076009F1} = {11C509DD-21AC-415F-B2F2-EB58985F2703}
-		{D0D4D281-24C1-4EE0-88D6-01FA18B90442} = {11C509DD-21AC-415F-B2F2-EB58985F2703}
-		{1A88B2CE-A954-4709-B15E-F6F1210AD2FD} = {11C509DD-21AC-415F-B2F2-EB58985F2703}
-		{53D6E924-1C32-4039-8192-CE1BEA129C61} = {11C509DD-21AC-415F-B2F2-EB58985F2703}
-		{54568B1F-31E7-4BA3-A2ED-826E85050603} = {11C509DD-21AC-415F-B2F2-EB58985F2703}
 		{BFE77559-B274-45DB-A4A2-A9D2E0EF70F9} = {84E05683-0E4A-4FB1-8FD4-9F0C509BC74C}
 		{0517F323-E3B1-441E-821D-64C5BDE0B1FD} = {BFE77559-B274-45DB-A4A2-A9D2E0EF70F9}
 		{86BB97BD-DE2C-4A87-9712-2CAFA94F2B22} = {BFE77559-B274-45DB-A4A2-A9D2E0EF70F9}

@@ -20,7 +20,7 @@ namespace KodlamaioDevs.Application.Features.Technologies.Rules
 
         public async Task TechnologyMustExistWhenRequested(Technology programmingLanguageToDelete)
         {
-            if (programmingLanguageToDelete == null) throw new BusinessException("Technology Must be existed");
+            if (programmingLanguageToDelete == null) { throw new BusinessException("Technology Must be existed"); }
         }
     }
 }

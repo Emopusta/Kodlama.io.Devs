@@ -17,7 +17,8 @@ namespace KodlamaioDevs.Persistence.Contexts
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
         public DbSet<Technology> Technologies { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
 
 
 
@@ -68,6 +69,23 @@ namespace KodlamaioDevs.Persistence.Contexts
 
             });
 
+            modelBuilder.Entity<OperationClaim>(a =>
+            {
+                a.ToTable("OperationClaims").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.Name).HasColumnName("Name");
+
+            });
+
+            modelBuilder.Entity<UserOperationClaim>(a =>
+            {
+                a.ToTable("UserOperationClaims").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.OperationClaimId).HasColumnName("OperationClaimId");
+                a.Property(p => p.UserId).HasColumnName("UserId");
+                
+            });
+
 
             ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1
                 ,"Python", "Pythooon"), new(2, "C#", "Test 2 Description") };
@@ -78,6 +96,12 @@ namespace KodlamaioDevs.Persistence.Contexts
 
             User[] userEntitySeeds = { new(1, "Emre", "Duman", "Emopusta@hotmail.com", Encoding.ASCII.GetBytes("asdasd"), Encoding.ASCII.GetBytes("asdasd"), false, 0) };
             modelBuilder.Entity<User>().HasData(userEntitySeeds);
+
+            OperationClaim[] operationClaimEntitySeeds = { new(1, "user"), new(2, "admin") };
+            modelBuilder.Entity<OperationClaim>().HasData(operationClaimEntitySeeds);
+
+            UserOperationClaim[] userOperationClaimEntitySeeds = { new(1, 1, 2) };
+            modelBuilder.Entity<UserOperationClaim>().HasData(userOperationClaimEntitySeeds);
         }
     }
 }
