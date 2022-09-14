@@ -19,6 +19,8 @@ namespace KodlamaioDevs.Persistence.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<GithubAccount> GithubAccounts { get; set; }
+
 
 
 
@@ -86,6 +88,14 @@ namespace KodlamaioDevs.Persistence.Contexts
                 
             });
 
+            modelBuilder.Entity<GithubAccount>(a =>
+            {
+                a.ToTable("GithubAccounts").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.UserId).HasColumnName("UserId");
+                a.Property(p => p.GithubLink).HasColumnName("GithubLink");
+            });
+
 
             ProgrammingLanguage[] programmingLanguageEntitySeeds = { new(1
                 ,"Python", "Pythooon"), new(2, "C#", "Test 2 Description") };
@@ -102,6 +112,9 @@ namespace KodlamaioDevs.Persistence.Contexts
 
             UserOperationClaim[] userOperationClaimEntitySeeds = { new(1, 1, 2) };
             modelBuilder.Entity<UserOperationClaim>().HasData(userOperationClaimEntitySeeds);
+
+            GithubAccount[] githubAccountEntitySeeds = { new(1, 1, "https://github.com/Emopusta") };
+            modelBuilder.Entity<GithubAccount>().HasData(githubAccountEntitySeeds);
         }
     }
 }

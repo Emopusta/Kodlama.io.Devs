@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\GithubAccounts\Commands\DeleteGithubAccount\" />
+    <Folder Include="Features\GithubAccounts\Commands\UpdateGithubAccount\" />
+    <Folder Include="Features\GithubAccounts\Constants\" />
+    <Folder Include="Features\GithubAccounts\Models\" />
+    <Folder Include="Features\GithubAccounts\Queries\" />
+    <Folder Include="Features\GithubAccounts\Rules\" />
+    <Folder Include="Features\GithubAccounts\Profiles\" />
     <Folder Include="Features\OperationClaims\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
     <Folder Include="Features\Technologies\Constants\" />
