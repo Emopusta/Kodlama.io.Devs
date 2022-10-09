@@ -1,9 +1,10 @@
 ﻿using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
+using KodlamaioDevs.Application.Features.Auths.Rules;
 using KodlamaioDevs.Application.Features.ProgrammingLanguages.Rules;
 using KodlamaioDevs.Application.Features.Technologies.Rules;
-using KodlamaioDevs.Application.Features.Users.Rules;
+using KodlamaioDevs.Application.Services.AuthService;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -26,7 +27,7 @@ namespace KodlamaioDevs.Application
             
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<TechnologyBusinessRules>();
-            services.AddScoped<UserBusinessRules>();
+            services.AddScoped<AuthBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             
@@ -35,6 +36,8 @@ namespace KodlamaioDevs.Application
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+
+            services.AddScoped<IAuthService, AuthManager>();
 
             return services;
 

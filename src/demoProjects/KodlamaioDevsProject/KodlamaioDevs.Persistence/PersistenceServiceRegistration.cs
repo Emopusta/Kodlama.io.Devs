@@ -26,6 +26,7 @@ namespace KodlamaioDevs.Persistence
             services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
             services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
             services.AddScoped<IGithubAccountRepository, GithubAccountRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
 
             return services;
