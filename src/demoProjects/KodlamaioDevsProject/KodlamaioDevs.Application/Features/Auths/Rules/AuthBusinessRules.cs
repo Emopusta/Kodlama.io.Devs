@@ -23,5 +23,11 @@ namespace KodlamaioDevs.Application.Features.Auths.Rules
             User? user = await _userRepository.GetAsync(u => u.Email == email);
             if (user != null) throw new BusinessException("Mail already exists");
         }
+
+        public async Task EmailMustExistWhenRequested(string email)
+        {
+            User? user = await _userRepository.GetAsync(u => u.Email == email);
+            if (user == null) throw new BusinessException("there is no user with this email");
+        }
     }
 }

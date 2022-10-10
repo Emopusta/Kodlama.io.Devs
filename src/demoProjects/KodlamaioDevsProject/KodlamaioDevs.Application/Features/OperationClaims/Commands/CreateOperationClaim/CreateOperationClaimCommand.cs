@@ -14,7 +14,7 @@ namespace KodlamaioDevs.Application.Features.OperationClaims.Commands.CreateOper
     public class CreateOperationClaimCommand : IRequest<CreatedOperationClaimDto> , ISecuredRequest
     {
         public string Name { get; set; }
-        public string[] Roles { get; } = { "admin" };
+        public string[] Roles => new[] { "admin" };
 
         public class CreateOperationClaimCommandHandler : IRequestHandler<CreateOperationClaimCommand, CreatedOperationClaimDto>
         {

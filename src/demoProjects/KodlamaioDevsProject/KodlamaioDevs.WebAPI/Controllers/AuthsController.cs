@@ -1,5 +1,6 @@
 ﻿using Core.Security.Dtos;
 using Core.Security.Entities;
+using KodlamaioDevs.Application.Features.Auths.Commands.Login;
 using KodlamaioDevs.Application.Features.Auths.Commands.Register;
 using KodlamaioDevs.Application.Features.Auths.Dtos;
 using Microsoft.AspNetCore.Http;
@@ -25,12 +26,12 @@ namespace KodlamaioDevs.WebAPI.Controllers
             return Created("", result.AccessToken);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Login([FromQuery] LoginCommand loginUserCommand)
-        //{
-        //    UserLoginDto result = await Mediator.Send(loginUserCommand);
-        //    return Ok(result);
-        //}
+        [HttpGet]
+        public async Task<IActionResult> Login([FromQuery] LoginCommand loginUserCommand)
+        {
+            LoggedDto result = await Mediator.Send(loginUserCommand);
+            return Ok(result);
+        }
 
         private void SetRefreshTokenToCookie(RefreshToken refreshToken)
         {

@@ -1,11 +1,13 @@
 ﻿using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Validation;
+using Core.Security.JWT;
 using FluentValidation;
 using KodlamaioDevs.Application.Features.Auths.Rules;
 using KodlamaioDevs.Application.Features.ProgrammingLanguages.Rules;
 using KodlamaioDevs.Application.Features.Technologies.Rules;
 using KodlamaioDevs.Application.Services.AuthService;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -23,7 +25,8 @@ namespace KodlamaioDevs.Application
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            
+
+            services.AddScoped<ITokenHelper,JwtHelper>();
             
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<TechnologyBusinessRules>();
@@ -37,6 +40,8 @@ namespace KodlamaioDevs.Application
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
             services.AddScoped<IAuthService, AuthManager>();
 
             return services;
