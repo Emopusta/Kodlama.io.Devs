@@ -1,4 +1,5 @@
-﻿using Core.Security.Entities;
+﻿using Core.Application.Pipelines.Authorization;
+using Core.Security.Entities;
 using KodlamaioDevs.Application.Features.UserOperationClaims.Dtos;
 using KodlamaioDevs.Application.Services.Repositories;
 using MediatR;
@@ -10,10 +11,12 @@ using System.Threading.Tasks;
 
 namespace KodlamaioDevs.Application.Features.UserOperationClaims.Commands.AddUserOperationClaim
 {
-    public class AddUserOperationClaimCommand: IRequest<AddedUserOperationClaimDto>
+    public class AddUserOperationClaimCommand : IRequest<AddedUserOperationClaimDto>, ISecuredRequest
     {
         public int UserId { get; set; }
         public int UserOperationClaimId { get; set; }
+
+        public string[] Roles { get; } = {"admin"};
 
         public class AddUserOperationClaimCommandHandler : IRequestHandler<AddUserOperationClaimCommand, AddedUserOperationClaimDto>
         {

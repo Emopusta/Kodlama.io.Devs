@@ -1,4 +1,5 @@
-﻿using Core.CrossCuttingConcerns.Exceptions;
+﻿using Core.Application.Pipelines.Authorization;
+using Core.CrossCuttingConcerns.Exceptions;
 using Core.Security.Entities;
 using KodlamaioDevs.Application.Features.OperationClaims.Dtos;
 using KodlamaioDevs.Application.Services.Repositories;
@@ -11,9 +12,10 @@ using System.Threading.Tasks;
 
 namespace KodlamaioDevs.Application.Features.OperationClaims.Commands.DeleteOperationClaim
 {
-    public class DeleteOperationClaimCommand : IRequest<DeletedOperationClaimDto>
+    public class DeleteOperationClaimCommand : IRequest<DeletedOperationClaimDto> , ISecuredRequest
     {
         public int Id { get; set; }
+        public string[] Roles { get; } = { "admin" };
 
         public class DeleteOperationClaimCommandHandler : IRequestHandler<DeleteOperationClaimCommand, DeletedOperationClaimDto>
         {

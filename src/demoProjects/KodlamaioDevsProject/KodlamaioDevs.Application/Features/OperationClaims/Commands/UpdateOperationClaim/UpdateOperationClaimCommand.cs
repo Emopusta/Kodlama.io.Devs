@@ -1,4 +1,5 @@
-﻿using Core.CrossCuttingConcerns.Exceptions;
+﻿using Core.Application.Pipelines.Authorization;
+using Core.CrossCuttingConcerns.Exceptions;
 using Core.Security.Entities;
 using KodlamaioDevs.Application.Features.OperationClaims.Dtos;
 using KodlamaioDevs.Application.Services.Repositories;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace KodlamaioDevs.Application.Features.OperationClaims.Commands.UpdateOperationClaim
 {
-    public class UpdateOperationClaimCommand : IRequest<UpdatedOperationClaimDto>
+    public class UpdateOperationClaimCommand : IRequest<UpdatedOperationClaimDto> , ISecuredRequest
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string[] Roles { get; } = { "admin" };
 
         public class UpdateOperationClaimCommandHandler : IRequestHandler<UpdateOperationClaimCommand, UpdatedOperationClaimDto>
         {
