@@ -14,8 +14,6 @@
     <Folder Include="Features\GithubAccounts\Queries\" />
     <Folder Include="Features\GithubAccounts\Rules\" />
     <Folder Include="Features\OperationClaims\Commands\UpdateOperationClaim\" />
-    <Folder Include="Features\OperationClaims\Models\" />
-    <Folder Include="Features\OperationClaims\Queries\GetListOperationClaim\" />
     <Folder Include="Features\UserOperationClaims\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
     <Folder Include="Features\Technologies\Constants\" />
