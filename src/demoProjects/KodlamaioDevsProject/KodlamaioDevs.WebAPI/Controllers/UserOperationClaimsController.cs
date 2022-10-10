@@ -1,6 +1,11 @@
-﻿using KodlamaioDevs.Application.Features.UserOperationClaims.Commands.AddUserOperationClaim;
+﻿using Core.Application.Requests;
+using KodlamaioDevs.Application.Features.OperationClaims.Models;
+using KodlamaioDevs.Application.Features.OperationClaims.Queries.GetListOperationClaim;
+using KodlamaioDevs.Application.Features.UserOperationClaims.Commands.AddUserOperationClaim;
 using KodlamaioDevs.Application.Features.UserOperationClaims.Commands.DeleteUserOperationClaim;
 using KodlamaioDevs.Application.Features.UserOperationClaims.Dtos;
+using KodlamaioDevs.Application.Features.UserOperationClaims.Models;
+using KodlamaioDevs.Application.Features.UserOperationClaims.Queries.GetByUserIdUserOperationClaim;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +26,13 @@ namespace KodlamaioDevs.WebAPI.Controllers
         {
             DeletedUserOperationClaimDto deletedUserOperationClaimDto = await Mediator.Send(deleteUserOperationClaimCommand);
             return Ok(deletedUserOperationClaimDto);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Get([FromQuery] PageRequest pageRequest, int userId)
+        {
+            GetByUserIdUserOperationClaimQuery getByUserIdUserOperationClaimQuery = new() { PageRequest = pageRequest , UserId = userId };
+            UserOperationClaimListModel result = await Mediator.Send(getByUserIdUserOperationClaimQuery);
+            return Ok(result);
         }
     }
 }

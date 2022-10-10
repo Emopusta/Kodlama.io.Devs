@@ -20,8 +20,6 @@
     <Folder Include="Features\Auths\Constants\" />
     <Folder Include="Features\Auths\Models\" />
     <Folder Include="Features\Auths\Queries\" />
-    <Folder Include="Features\UserOperationClaims\Models\" />
-    <Folder Include="Features\UserOperationClaims\Queries\GetByUserIdUserOperationClaim\" />
   </ItemGroup>
 
 	<ItemGroup>
